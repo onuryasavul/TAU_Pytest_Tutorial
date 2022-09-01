@@ -49,3 +49,4 @@ products = [
 @pytest.mark.parametrize("a, b, product", products)
 def test_multiplication(a, b, product):
     assert a * b == product
+
