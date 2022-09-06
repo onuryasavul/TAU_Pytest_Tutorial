@@ -1,7 +1,7 @@
 import pytest
 
 
-# A Failing Test Case
+# Simple Test Case
 def test_one_plus_one():
     assert 1 + 1 == 2
 
@@ -25,7 +25,7 @@ def test_divide_by_zero():
 
 def testsquare():
    num = 7
-   assert num * num == 40
+   assert num * num == 49
 
 
 # Parameterized Test Cases
