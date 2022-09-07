@@ -2,26 +2,26 @@ import pytest
 
 
 # Simple Test Case
-def test_one_plus_one():
+def test_one_plus_one(fixture_sample):
     assert 1 + 1 == 2
 
 
 # A Failing Test Case
-def test_one_plus_two():
+def test_one_plus_two(fixture_sample):
     a = 1
     b = 2
     assert a + b == 2
 
 
 # A Test Case with an Exception
-def test_divide_by_zero():
+def test_divide_by_zero(fixture_sample):
     with pytest.raises(ZeroDivisionError) as e:
         num = 1 / 0
 
     assert "division by zero" in str(e.value)
 
 
-def testsquare():
+def testsquare(fixture_sample):
     num = 7
     assert num * num == 49
 
@@ -51,17 +51,17 @@ products = [
 
 
 @pytest.mark.parametrize("a, b, product", products)
-def test_multiplication(a, b, product):
+def test_multiplication(a, b, product, fixture_sample):
     assert a * b == product
 
 
 @pytest.mark.xfail
-def test_greater_equal():
+def test_greater_equal(fixture_sample):
     num = 100
     assert num >= 100
 
 
 @pytest.mark.skip
-def test_less():
+def test_less(fixture_sample):
     num = 100
     assert num < 200
