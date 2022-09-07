@@ -10,9 +10,7 @@ def test_one_plus_one():
 def test_one_plus_two():
     a = 1
     b = 2
-    c = 0
-    # c = 3
-    assert a + b == c
+    assert a + b == 2
 
 
 # A Test Case with an Exception
@@ -24,8 +22,8 @@ def test_divide_by_zero():
 
 
 def testsquare():
-   num = 7
-   assert num * num == 49
+    num = 7
+    assert num * num == 49
 
 
 # Parameterized Test Cases
@@ -55,3 +53,15 @@ products = [
 @pytest.mark.parametrize("a, b, product", products)
 def test_multiplication(a, b, product):
     assert a * b == product
+
+
+@pytest.mark.xfail
+def test_greater_equal():
+    num = 100
+    assert num >= 100
+
+
+@pytest.mark.skip
+def test_less():
+    num = 100
+    assert num < 200
