@@ -1,7 +1,7 @@
 class Accumulator:
 
-    def __init__(self):
-        self._count = 0
+    def __init__(self, accum_val=0):
+        self._count = accum_val
 
     @property
     def count(self):
